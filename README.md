@@ -1,4 +1,4 @@
-# MVC 框架 - MF
+# MVC 框架 - mf (My PHP Framework ^ ^)
 
 **功能特性：**
 
@@ -9,42 +9,25 @@
 
 **目录结构：**
 
-app 应用目录
-|---- Configs 应用配置
-
-|---- Controllers 应用控制器
-
-|---- Dao 访问数据库层
-
-|---- Helpers 存放函数库等的目录
-
-|---- I18N 存放国际化的文件(po和mo文件)
-
-|---- Models 应用模型类
-
-|---- Services 业务逻辑类
-
-|---- Views 视图页面
-
-doc 文档目录
-
-logs 项目日志目录
-
-public 访问入口目录
-
-|---- assets 静态文件目录
-
-|&emsp;&emsp;|---- js 访问的js文件
-
-|&emsp;&emsp;|---- css 访问的css文件
-
-|&emsp;&emsp;|---- images 访问的images文件
-
-|---------- index.php 入口文件
-
-resources 静态资源目录
-
-sql sql文件存放目录
+app 应用目录<br/>
+|---- Configs 应用配置<br/>
+|---- Controllers 应用控制器<br/>
+|---- Dao 访问数据库层<br/>
+|---- Helpers 存放函数库等的目录<br/>
+|---- I18N 存放国际化的文件(po和mo文件)<br/>
+|---- Models 应用模型类<br/>
+|---- Services 业务逻辑类<br/>
+|---- Views 视图页面<br/>
+doc 文档目录<br/>
+logs 项目日志目录<br/>
+public 访问入口目录<br/>
+|---- assets 静态文件目录<br/>
+|&emsp;&emsp;|---- js 访问的js文件<br/>
+|&emsp;&emsp;|---- css 访问的css文件<br/>
+|&emsp;&emsp;|---- images 访问的images文件<br/>
+|---------- index.php 入口文件<br/>
+resources 静态资源目录<br/>
+sql sql文件存放目录<br/>
 
 框架参考了CI、ThinkPHP、SocketLog等开源产品,感谢创作这些框架的人们!!
 
