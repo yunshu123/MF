@@ -1,4 +1,4 @@
-# MVC 框架 - mf (My PHP Framework ^ ^)
+# MVC 框架 - MPHP
 
 **功能特性：**
 
