@@ -1,6 +1,7 @@
 <?php
-namespace MF;
-use MF\View;
+namespace Mphp;
+
+use Mphp\View;
 
 class Route
 {

@@ -1,12 +1,12 @@
 <?php
-namespace MF;
+namespace Mphp;
 
 class Loader
 {
 	public static function register()
 	{
 		$load_files =  [
-			MF_PATH . 'Helpers/functions.php',
+			MPHP_PATH . 'Helpers/functions.php',
 			APP_PATH . 'Helpers/functions.php',
 		];
 		foreach ($load_files as $file){
@@ -15,23 +15,22 @@ class Loader
 			}
 		}
 
-		spl_autoload_register(array('MF\Loader', 'autoload'));
+		spl_autoload_register(['Mphp\Loader', 'autoload']);
 	}
 
 	public static function autoload($class)
 	{
 		$map = [
-			'MF'                =>  MF_PATH,
+			'Mphp'                =>  rtrim(MPHP_PATH, '/'),
+		    'App'                 =>  rtrim(APP_PATH, '/'),
 		];
 		$config = get_config('app');
 		$map = ($config && $config['autoload_namespace']) ? array_merge($map, $config['autoload_namespace']) : $map;
 		$namespace = array_keys($map);
 		$path = array_values($map);
-
 		 if (false !== strpos($class, '\\')) {
 			$name = strstr($class, '\\', true);
 			 $filename = str_replace('\\', '/', str_replace($namespace, $path, $class)) . '.php';
-
 			if (is_file($filename)) {
 				include $filename;
 			}

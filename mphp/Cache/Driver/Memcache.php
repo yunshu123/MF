@@ -1,7 +1,7 @@
 <?php
-namespace MF\Cache\Driver;
+namespace Mphp\Cache\Driver;
 
-use MF\Cache;
+use Mphp\Cache;
 
 class Memcache extends Cache
 {

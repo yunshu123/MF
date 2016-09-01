@@ -1,5 +1,5 @@
 <?php
-use MF\Libraries;
+use Mphp\Libraries;
 
 function slog_config($config=[])
 {
@@ -74,10 +74,10 @@ function slog($log, $type = 'log', $css = '')
 		$type = preg_replace_callback('/_([a-zA-Z])/',
 			create_function('$matches', 'return strtoupper($matches[1]);'),
 			$type);
-		if (method_exists('MF\Libraries\SocketLog', $type)
+		if (method_exists('Mphp\Libraries\SocketLog', $type)
 		    || in_array($type, Libraries\SocketLog::$log_types)
 		) {
-			return call_user_func(array('MF\Libraries\SocketLog', $type), $log, $css);
+			return call_user_func(array('Mphp\Libraries\SocketLog', $type), $log, $css);
 		}
 	}
 

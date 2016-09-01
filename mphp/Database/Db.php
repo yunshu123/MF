@@ -1,6 +1,6 @@
 <?php
-namespace MF\Database;
-use MF\Libraries\Fake;
+namespace Mphp\Database;
+use Mphp\Libraries\Fake;
 
 //数据库封装类
 class Db extends \Pdo

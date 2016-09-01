@@ -1,5 +1,5 @@
 <?php
-namespace MF;
+namespace Mphp;
 
 class Cache
 {
@@ -13,7 +13,7 @@ class Cache
 		$guid = $type . md5(serialize($options));
 
 		if ( ! isset($_instance[$guid])) {
-			$type = 'MF\\Cache\\Driver\\' . ucwords(strtolower($type));
+			$type = 'Mphp\\Cache\\Driver\\' . ucwords(strtolower($type));
 			if (class_exists($type)) {
 				$class            = new $type($options);
 				$_instance[$guid] = $class;

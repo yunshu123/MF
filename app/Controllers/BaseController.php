@@ -1,5 +1,9 @@
 <?php
-class BaseController extends \MF\Controller
+namespace App\Controllers;
+
+use Mphp\Controller;
+
+class BaseController extends Controller
 {
 	protected $domain;
 

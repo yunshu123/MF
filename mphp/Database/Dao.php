@@ -1,7 +1,7 @@
 <?php
-namespace MF\Database;
+namespace Mphp\Database;
 
-use MF\Libraries\Fake;
+use Mphp\Libraries\Fake;
 
 abstract class Dao
 {

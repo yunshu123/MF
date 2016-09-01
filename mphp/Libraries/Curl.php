@@ -1,5 +1,5 @@
 <?php
-namespace MF\Libraries;
+namespace Mphp\Libraries;
 
 final class Curl
 {

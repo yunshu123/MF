@@ -1,5 +1,5 @@
 <?php
-namespace MF;
+namespace Mphp;
 
 class Service
 {

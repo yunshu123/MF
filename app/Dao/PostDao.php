@@ -1,6 +1,8 @@
 <?php
-use MF\Database\Dao;
-use MF\Libraries\Fake;
+namespace App\Dao;
+
+use Mphp\Database\Dao;
+use Mphp\Libraries\Fake;
 
 class PostDao extends Dao {
 
@@ -41,14 +43,14 @@ class PostDao extends Dao {
 //		$res = $this->getDb()->queryAll("select * from <DB>.<TABLE> where id=".intval($id));
 		$data = parent::getList($condition, $page, $size, $query_type);
 //		查看执行的SQL
-//		dump(\MF\Database\Db::$sql);
+//		dump(\Mphp\Database\Db::$sql);
 		return $data;
 	}
 
 	public function getOne($condition, $query_type = 1)
 	{
 		$data = parent::getOne($condition, $query_type);
-//		dump(\MF\Database\Db::$sql);
+//		dump(\Mphp\Database\Db::$sql);
 
 		return $data;
 	}

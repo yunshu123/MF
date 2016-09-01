@@ -1,5 +1,5 @@
 <?php
-use MF\Libraries;
+use Mphp\Libraries;
 
 function snake_case($value, $delimiter = '_')
 {
@@ -17,20 +17,6 @@ function snake_case($value, $delimiter = '_')
 	}
 
 	return $snakeCache[$key] = $value;
-}
-
-function dump($var, $exit=false)
-{
-	ob_start();
-	var_dump($var);
-	$output = ob_get_clean();
-	if ( ! extension_loaded('xdebug')) {
-		$output = preg_replace('/\]\=\>\n(\s+)/m', '] => ', $output);
-		$output = '<pre>' . htmlspecialchars($output, ENT_QUOTES) . '</pre>';
-	}
-
-	echo($output);
-    $exit && exit(1);
 }
 
 function redirect($url, $time = 0, $msg = '')

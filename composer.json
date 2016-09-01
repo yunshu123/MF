@@ -1,0 +1,21 @@
+{
+    "name": "yunshu123/mphp",
+    "description": "my php mvc framework",
+    "keywords": [
+        "framework",
+        "mphp"
+    ],
+    "type": "framework",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "yunshu123",
+            "email": "yunshu@yunshudm.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "filp/whoops": "*",
+        "symfony/var-dumper": "^3.1"
+    }
+}

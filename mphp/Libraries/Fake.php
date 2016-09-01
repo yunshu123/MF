@@ -1,5 +1,5 @@
 <?php
-namespace MF\Libraries;
+namespace Mphp\Libraries;
 
 //对错误进行处理
 class Fake

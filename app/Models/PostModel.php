@@ -1,7 +1,9 @@
 <?php
-use MF\Model;
-use MF\Service;
-use MF\Libraries\Fake;
+namespace App\Models;
+
+use Mphp\Model;
+use Mphp\Service;
+use Mphp\Libraries\Fake;
 
 class PostModel extends Model
 {
@@ -13,7 +15,7 @@ class PostModel extends Model
 		$condition = [
 			'catalog_id'   =>  ['op'=>'in', 'val'=>$cates],
 		];
-		$data = Service::post($condition, 1, $count, 1)->send('Post.getList');
+		$data = Service::post($condition, 1, $count, 1)->send('App\Services\Post.getList');
 
 		if (Fake::check($data)) {
 			return [];

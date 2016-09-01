@@ -1,8 +1,8 @@
 <?php
 
-define('PUB_PATH', __DIR__ . '/');
-define('MF_PATH', PUB_PATH . '../mf/');
-define('APP_PATH', PUB_PATH . '../app/');
+define('PROJ_PATH', dirname(__DIR__) . '/');
+define('MPHP_PATH', PROJ_PATH . 'mphp/');
+define('APP_PATH', PROJ_PATH . 'app/');
 define('I18N', APP_PATH . 'I18N/');
 
 define("DEBUG", "DEBUG");
@@ -12,11 +12,12 @@ define("STAT", "STAT");
 
 $hostname = php_uname('n');
 if (false !== strpos($hostname, 'online')) {
-	define('MF_ENV', 'live');
+	define('PROJ_ENV', 'live');
 } else if (false !== strpos($hostname, 'test')) {
-	define('MF_ENV', 'test');
+	define('PROJ_ENV', 'test');
 } else {
-	define('MF_ENV', 'dev');
+	define('PROJ_ENV', 'dev');
 }
 
-require MF_PATH . 'Bootstrap.php';
+$app = require MPHP_PATH . 'Bootstrap.php';
+$app::run();

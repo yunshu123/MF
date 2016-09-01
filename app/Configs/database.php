@@ -3,7 +3,7 @@
 //mysql配置
 $database = [];
 
-switch (MF_ENV) {
+switch (PROJ_ENV) {
 	case 'test':
 		$database['A'] = [
 			'type' => 'mysql',

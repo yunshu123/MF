@@ -1,7 +1,10 @@
 <?php
-use MF\Service;
-use MF\Model;
-use MF\Libraries\Fake;
+namespace App\Services;
+
+use App\Dao\PostDao;
+use Mphp\Service;
+use Mphp\Model;
+use Mphp\Libraries\Fake;
 
 //关于文章的处理业务
 class PostService extends Service
