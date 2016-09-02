@@ -77,7 +77,7 @@ function slog($log, $type = 'log', $css = '')
 		if (method_exists('Mphp\Libraries\SocketLog', $type)
 		    || in_array($type, Libraries\SocketLog::$log_types)
 		) {
-			return call_user_func(array('Mphp\Libraries\SocketLog', $type), $log, $css);
+			return call_user_func(['Mphp\Libraries\SocketLog', $type], $log, $css);
 		}
 	}
 

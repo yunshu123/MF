@@ -45,9 +45,9 @@ class IndexController extends BaseController
         //I18N
         echo _('HELLO_WORLD');
 
-        //		$data['name'] = 'yunshu';
-//		$data['age'] = 25;
-//		return View::make('index.index')->with('data', $data);
+        $data['name'] = 'yunshu';
+		$data['age'] = 25;
+		return View::make('index.index')->with('data', $data);
     }
 
     public function sayHello()

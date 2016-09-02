@@ -13,9 +13,10 @@ class View {
 
 	public static function make($viewName = null)
 	{
-		$viewFilePath = self::getFilePath($viewName);
+		$filePath = str_replace('.', '/', $viewName) . '.php';
+		$viewFilePath = VIEW_PATH.$filePath;
 		if ( is_file($viewFilePath) ) {
-			return new View($viewFilePath);
+			return new View($filePath);
 		} else {
 			throw new \UnexpectedValueException("View file does not exist!");
 		}
@@ -29,10 +30,14 @@ class View {
 		}
 
 		if ( $view instanceof View ) {
-			if ($view->data) {
-				extract($view->data);
-			}
-			require $view->view;
+			\Twig_Autoloader::register();
+			$loader = new \Twig_Loader_Filesystem(VIEW_PATH);
+			$twig = new \Twig_Environment($loader, array(
+				'cache' =>  DATA_PATH . 'Cache',
+//				'debug' =>  DEBUG,
+			));
+
+			echo $twig->render($view->view, $view->data);
 		}
 	}
 
@@ -42,16 +47,9 @@ class View {
 		return $this;
 	}
 
-	private static function getFilePath($viewName)
-	{
-		$filePath = str_replace('.', '/', $viewName);
-		return VIEW_PATH.$filePath.'.php';
-	}
-
 	public function __call($method, $parameters)
 	{
-		if (starts_with($method, 'with'))
-		{
+		if (starts_with($method, 'with')) {
 			return $this->with(snake_case(substr($method, 4)), $parameters[0]);
 		}
 

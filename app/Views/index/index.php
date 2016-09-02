@@ -1,1 +1,1 @@
-<?= $data['name']?>--<?= $data['age']?>
+{{ data.name }}-- {{data.age}}
