@@ -6,7 +6,7 @@
 > 当前版本正在转移和不断的完善中, 切勿用于生产环境...
 
 
-## 使用本框架：
+## 使用本框架
 1. git clone https://github.com/yunshu123/mphp.git
 
 2. composer install
@@ -19,7 +19,7 @@ composer中文文档：http://docs.phpcomposer.com/
 
 composer中国镜像：http://www.phpcomposer.com/
 
-## TODO:
+## TODO
 * composer自动加载
 * 数据库读写分离
 * model层优化
