@@ -18,3 +18,9 @@
 composer中文文档：http://docs.phpcomposer.com/
 
 composer中国镜像：http://www.phpcomposer.com/
+
+## TODO:
+* composer自动加载
+* 数据库读写分离
+* model层优化
+* 其他...

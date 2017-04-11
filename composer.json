@@ -5,7 +5,8 @@
         "framework",
         "mphp"
     ],
-    "type": "framework",
+    "homepage": "https://blog.yunshudm.com/",
+    "type": "library",
     "license": "MIT",
     "authors": [
         {
@@ -18,5 +19,8 @@
         "filp/whoops": "*",
         "symfony/var-dumper": "^3.1",
         "twig/twig": "^1.24"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^3.1"
     }
 }
