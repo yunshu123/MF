@@ -26,6 +26,7 @@
         "symfony/var-dumper": "^3.1"
     },
     "autoload": {
+        "files": ["app/common.php"],
         "classmap": [
             "app/controller",
             "app/service",

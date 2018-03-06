@@ -11,6 +11,8 @@ class Home extends Base
         $ret = Service::post(14)->send('app\service\post.getOne');
         dump($ret);
 
-        Logger::write('aaa', ['bb']);
+        test();
+
+//        Logger::write('aaa', ['bb']);
     }
 }
