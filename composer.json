@@ -1,26 +1,39 @@
 {
-    "name": "yunshu123/mphp",
-    "description": "my php mvc framework",
+    "name": "yunshu2009/mphp",
+    "description": "A simple php mvc framework",
     "keywords": [
         "framework",
         "mphp"
     ],
-    "homepage": "https://blog.yunshudm.com/",
+    "homepage": "https://yunshu.me",
     "type": "library",
     "license": "MIT",
     "authors": [
         {
-            "name": "yunshu123",
-            "email": "yunshu@yunshudm.com"
+            "name": "yunshu2009",
+            "email": "i@yunshu.me"
         }
     ],
     "require": {
         "php": ">=5.4.0",
-        "filp/whoops": "*",
         "symfony/var-dumper": "^3.1",
-        "twig/twig": "^1.24"
+        "noahbuscher/macaw": "dev-master",
+        "catfan/Medoo": "^1.5",
+        "vlucas/phpdotenv": "^2.4",
+        "monolog/monolog": "^1.23"
     },
     "require-dev": {
         "symfony/var-dumper": "^3.1"
+    },
+    "autoload": {
+        "classmap": [
+            "app/controller",
+            "app/service",
+            "app/dao"
+        ],
+        "psr-4": {
+            "app\\": "app/",
+            "mphp\\":"mphp/"
+        }
     }
 }
