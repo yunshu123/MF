@@ -85,6 +85,8 @@
 
 3. 设置虚拟主机，将web根目录指向public目录
 
+4. 导入mphp.sql到数据库，看测试例子效果
+
 ### Nginx重写方法(将请求路由到index.php)
 ```
 location / {
@@ -94,7 +96,6 @@ location / {
     }
 }
 ```
-
 
 ## 简单性能测试
 
