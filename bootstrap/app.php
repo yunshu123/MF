@@ -1,10 +1,10 @@
 <?php
-use NoahBuscher\Macaw\Macaw as Route;
-
 define('ROOT_PATH', dirname(__DIR__) . '/');
 define('APP_PATH', ROOT_PATH . '/app/');
 define('CONFIG_PATH', APP_PATH . 'config/');
 defined('PROJ_ENV') or define('PROJ_ENV', 'dev');
+
+require __DIR__.'/../vendor/autoload.php';
 
 $env = new Dotenv\Dotenv(ROOT_PATH);
 $env->load();
@@ -24,6 +24,12 @@ switch (PROJ_ENV) {
         exit();
 }
 
+$app = new \DI\Bridge\Slim\App([
+    'settings' => [
+        'displayErrorDetails' => (PROJ_ENV=='dev' ? true : false),
+    ]
+]);
+
 require __DIR__.'/../route/api.php';
 
-Route::dispatch();
+return $app;

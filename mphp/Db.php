@@ -2,6 +2,7 @@
 namespace mphp;
 
 use Medoo\Medoo;
+use Noodlehaus\Config;
 
 class Db
 {
@@ -14,13 +15,14 @@ class Db
     public static function instance($tag)
     {
         if (! isset(self::$instance[$tag])) {
-            $dbConfig = require CONFIG_PATH . 'database.php';
-            if (! isset($dbConfig[$tag])) {
+            $config = Config::load(CONFIG_PATH.'database.php');
+            $dbConfig = $config->get($tag);
+            if (! $dbConfig) {
                 throw new \Exception('对应数据库配置不存在');
             }
-            self::$instance = new Medoo($dbConfig[$tag]);
+            self::$instance[$tag] = new Medoo($dbConfig);
         }
 
-        return self::$instance;
+        return self::$instance[$tag];
     }
 }

@@ -1,7 +1,7 @@
 <?php
 namespace app\dao;
 
-class Base
+class BaseDao
 {
 
 }

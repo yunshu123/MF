@@ -1,19 +1,20 @@
 <?php
 namespace app\service;
 
-class Post extends Base
+use app\dao\PostDao;
+
+class PostService extends BaseService
 {
     protected $conn = 'A';
     protected $postDao;
 
 	public function __construct()
 	{
-		$this->postDao = new \app\dao\Post($this->conn);
+		$this->postDao = new PostDao($this->conn);
 	}
 
 	public function getOne($id)
 	{
-//        return $this->postDao->db->select(\app\dao\Post::TBL, [], ['id'=>$id]);
-	    return ['hello'];
+        return $this->postDao->db->get(PostDao::TBL, '*', ['id'=>(int)$id]);
     }
 }

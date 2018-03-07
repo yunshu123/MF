@@ -1,8 +1,6 @@
 <?php
 namespace app\service;
 
-//service基类
-class Base
+class BaseService
 {
-    public $isClosed = false;
 }

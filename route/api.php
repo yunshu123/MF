@@ -1,8 +1,4 @@
 <?php
-use NoahBuscher\Macaw\Macaw as Route;
+$app->get('/test', ['\app\controller\TestController', 'test']);
 
-Route::get('fuck', function() {
-    echo "成功！";
-});
-
-Route::get('index', 'app\controller\Home@index');
+//$app->get('/{id}', ['\app\controller\HomeController', 'index']);

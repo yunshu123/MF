@@ -3,7 +3,7 @@ namespace app\dao;
 
 use mphp\Db;
 
-class Post extends Base
+class PostDao extends BaseDao
 {
     public $db;
     const TBL = 'post';

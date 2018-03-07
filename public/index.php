@@ -1,5 +1,7 @@
 <?php
+define('MPHP_START', microtime(true));
+define('PROJ_ENV', 'live');  //部署环境
 
-require __DIR__.'/../vendor/autoload.php';
+$app = require __DIR__.'/../bootstrap/app.php';
 
-require __DIR__.'/../bootstrap/app.php';
+$app->run();
