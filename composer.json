@@ -1,6 +1,6 @@
 {
     "name": "yunshu2009/mphp",
-    "description": "A Simple PHP MVC Framework based on Composer",
+    "description": "A Simple PHP MVC Framework based on Composer.It is a helps you quickly write simple yet powerful APIs.",
     "keywords": [
         "framework",
         "mphp"
@@ -38,8 +38,7 @@
             "app/library"
         ],
         "psr-4": {
-            "app\\": "app/",
-            "mphp\\":"mphp/"
+            "app\\": "app/"
         }
     }
 }
