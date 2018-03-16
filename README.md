@@ -4,8 +4,6 @@ MPHP is A Simple PHP MVC Framework based on Composer.
 
 This framework is a helps you quickly write simple yet powerful APIs.
 
----
-
 
 ## Installtion
 
@@ -31,44 +29,46 @@ modify  ```config/database.php```  configure database and import ```demo.sql```
 
 Configure router: ```config/routes.php```
 
-
-<<<<<<< 98da94812ca3d17f7058b33529f964e4e9a5cf9a
-4. 导入mphp.sql到数据库，看测试例子效果
-
-### Nginx重写方法(将请求路由到index.php)
 ```
-location / {
-    if (!-e $request_filename) {
-        rewrite ^/(.*)$ /index.php last;
-        break;
-    }
-}
-```
-
-## 简单性能测试
-=======
-```
-$app->get('/test', ['\app\controller\TestController', 'test']);
->>>>>>> # 更新
+$app->get('/api/v1/article/{id}', '\app\controller\v1\PostController:getArticleById');
 
 ```
 
 Configure controller: ```app/controller/TestController.php```
 
 ```
-namespace app\controller;
+<?php
+namespace app\controller\v1;
 
-use mphp\Db;
+use app\service\PostService;
+use Interop\Container\ContainerInterface;
+use Slim\Http\Request;
 
-class TestController extends BaseController
+class PostController extends BaseController
 {
-    public function test()
+    private $postService;
+
+    public function __construct(ContainerInterface $ci)
     {
-        $db = Db::instance('A');
-        $ret = $db->get('post', '*', ['id'=>49]);
-        print_r($ret['title']);
+        parent::__construct($ci);
+
+        $this->postService = new PostService();
+    }
+
+    public function getArticleById(Request $request)
+    {
+        $id = (int)$request->getAttribute('id');
+
+        $ret = $this->postService->getOne($id);
+
+        if (! $ret) {
+            return $this->result('error', 1, [], 404);
+        } else {
+            return $this->result('OK', 0, $ret);
+        }
     }
 }
+
 ```
 
 ### Run
@@ -82,8 +82,5 @@ visit [http://localhost:8000](http://localhost:8000)
 
 ## Others
 
-<<<<<<< 98da94812ca3d17f7058b33529f964e4e9a5cf9a
-欢迎朋友们star、fork，一起完善。
-=======
 Welcome friends to star, fork.
->>>>>>> # 更新
+
