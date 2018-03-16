@@ -1,4 +1,5 @@
 <?php
-$app->get('/test', ['\app\controller\TestController', 'test']);
 
-//$app->get('/{id}', ['\app\controller\HomeController', 'index']);
+//api路由
+
+$app->get('/api/v1/article/{id}', '\app\controller\v1\PostController:getArticleById');

@@ -1,7 +1,7 @@
 <?php
 namespace app\dao;
 
-use mphp\Db;
+use app\library\DB;
 
 class PostDao extends BaseDao
 {
@@ -10,6 +10,6 @@ class PostDao extends BaseDao
 
     public function __construct($conn)
     {
-        $this->db = Db::instance($conn);
+        $this->db = DB::instance($conn);
     }
 }
