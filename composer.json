@@ -32,10 +32,11 @@
             "app/helper.php"
         ],
         "classmap": [
-            "app/controller",
             "app/service",
             "app/dao",
-            "app/library"
+            "app/library",
+            "app/trait",
+            "app/validate"
         ],
         "psr-4": {
             "app\\": "app/"
