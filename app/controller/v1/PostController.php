@@ -3,8 +3,8 @@ namespace app\controller\v1;
 
 use app\service\PostService;
 use Interop\Container\ContainerInterface;
-use Respect\Validation\Validator;
 use Slim\Http\Request;
+use think\Validate;
 
 class PostController extends BaseController
 {
@@ -19,17 +19,16 @@ class PostController extends BaseController
 
     public function getArticleById(Request $request)
     {
-        //todo: 使用validator
-//        $idValidator = Validator::numeric()->positive();
-//        $validators = array(
-//            'id' => $idValidator,
-//        );
-//
-//        if($request->getAttribute('has_errors')){
-//            $this->result($request->getAttribute('errors'), 0, [], 400);
-//        }
+        $validator = Validate::make([
+            'id'    =>  'require|number'
+        ]);
 
         $id = $request->getAttribute('id');
+
+        if (! $validator->check(['id'=>$id])) {
+            return $this->result($validator->getError(), 1, [], 400);
+        }
+
         $ret = $this->postService->getOne($id);
 
         if (! $ret) {
