@@ -1,8 +1,6 @@
 # MPHP 
 
-MPHP is A Simple PHP MVC Framework based on Composer.
-
-This framework is a helps you quickly write simple yet powerful APIs.
+MPHP is A Simple PHP Micro Service Framework based on Composer,it helps you quickly write simple yet powerful APIs. 
 
 
 ## Installtion
