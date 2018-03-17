@@ -9,7 +9,6 @@ MPHP is A Simple PHP Micro Service Framework based on Composer,it helps you quic
 
 ```
 git clone https://github.com/yunshu2009/mphp.git
-
 ```
 
 ### Install dependencies:
@@ -17,7 +16,6 @@ git clone https://github.com/yunshu2009/mphp.git
 
 ```
 composer install
-
 ```
 
 modify  ```config/database.php```  configure database and import ```demo.sql```
@@ -29,7 +27,6 @@ Configure router: ```config/routes.php```
 
 ```
 $app->get('/api/v1/article/{id}', '\app\controller\v1\PostController:getArticleById');
-
 ```
 
 Configure controller: ```app/controller/TestController.php```
@@ -75,7 +72,6 @@ class PostController extends BaseController
         }
     }
 }
-
 ```
 
 ### Run
