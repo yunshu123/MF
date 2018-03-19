@@ -2,7 +2,6 @@ language: php
 
 # list any PHP version you want to test against
 php:
-  - 7.0
   - 7.1
 
 #指定分支，只有指定的分支提交时才会运行脚本
