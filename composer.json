@@ -34,6 +34,11 @@
             "app\\": "app"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "tests\\": "tests/"
+        }
+    },
     "require-dev": {
         "phpunit/phpunit": "^7.0"
     }
