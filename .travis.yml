@@ -5,8 +5,13 @@ php:
   - 7.0
   - 7.1
 
+#指定分支，只有指定的分支提交时才会运行脚本
+branches:
+  only:
+    - master
+
 before_script:
   - composer self-update
-  - composer install
+  - composer install --prefer-source --no-interaction
 
-script: vendor/bin/phpunit -c phpunit.xml
+script: phpunit -c phpunit.xml
