@@ -25,14 +25,15 @@
         "topthink/think-validate": "^1.0"
     },
     "require-dev": {
-        "symfony/var-dumper": "^3.1"
+        "phpunit/phpunit": "^6.1"
     },
     "autoload": {
         "files": [
             "app/helper.php"
         ],
         "classmap": [
-            "app/dao"
+            "app/dao",
+            "app/tests"
         ],
         "psr-4": {
             "app\\": "app"
