@@ -32,8 +32,7 @@
             "app/helper.php"
         ],
         "classmap": [
-            "app/dao",
-            "app/tests"
+            "app/dao"
         ],
         "psr-4": {
             "app\\": "app"

@@ -7,6 +7,6 @@ php:
 
 before_script:
   - composer self-update
-  - composer install --prefer-source --no-interaction
+  - composer install
 
-script: phpunit -c phpunit.xml
+script: vendor/bin/phpunit -c phpunit.xml
