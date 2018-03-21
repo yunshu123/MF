@@ -31,7 +31,7 @@ Configure router: ```config/routes.php```
 $app->get('/api/v1/article/{id}', '\app\controller\v1\PostController:getArticleById');
 ```
 
-Configure controller: ```app/controller/TestController.php```
+Configure controller: ```app/controller/PostController.php```
 
 ```
 <?php
